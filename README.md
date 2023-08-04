@@ -1,10 +1,10 @@
 # SvelteKit i18n starter
 
-This is a starter like we use here at Reepolee for all our SvelteKit projects. We're using the [svelte-i18n](https://github.com/kaisermann/svelte-i18n) library and [i18n-ally](https://github.com/lokalise/i18n-ally) VSCode extension. [Tailwind](https://tailwindcss.com/) is set up as CSS helper.
+This is a starter like we use here at Reepolee for all our SvelteKit projects. We're using the [svelte-i18n](https://github.com/kaisermann/svelte-i18n) library and [i18n-ally](https://github.com/lokalise/i18n-ally) VSCode extension. [Tailwind](https://tailwindcss.com/) is set up as a CSS helper.
 
 ## Setup
 
-After cloning, run the following from the project folder as you would for any SvelteKit project:
+After cloning, copy `.env.example` to `.env` and run the following from the project folder as you would for any SvelteKit project:
 
 ```bash
 pnpm install
