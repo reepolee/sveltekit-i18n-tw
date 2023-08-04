@@ -1,0 +1,9 @@
+{
+    "general": {
+        "welcome": "Dobrodošli!",
+        "home": {
+            "url": "/sl",
+            "caption": "Domov"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "general": {
+        "welcome": "Willkommen!",
+        "home": {
+            "url": "/de",
+            "caption": "Startseite"
+        }
+    }
+}
