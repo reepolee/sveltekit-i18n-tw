@@ -4,8 +4,6 @@
     export let data;
 </script>
 
-<pre>{data.lang}</pre>
-
 {#if !$isLoading}
     <div class="p-2 md:p-8">
         <h1 class="font-bold text-3xl">{$_('general.welcome')}</h1>

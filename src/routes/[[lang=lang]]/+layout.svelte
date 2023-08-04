@@ -8,10 +8,6 @@
     $: locale.set($page.data.lang);
 </script>
 
-<pre>{JSON.stringify($locales)}</pre>
-<pre>{JSON.stringify($locale)}</pre>
-<pre>{JSON.stringify($isLoading)}</pre>
-
 {#if !$isLoading}
     <Navigation />
 
