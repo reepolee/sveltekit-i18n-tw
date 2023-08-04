@@ -15,7 +15,7 @@ Point your browser to http://localhost:5173 and enjoy your multi language app.
 
 ## How it works
 
-Optional parameters `[[lang]]` is set as the top route. If it's present in the URL, hooks will set a cookie for it as selected language and forward it as `locals.lang`. If `lang` param is not present, `locals.lang` will be set from either cookie, request header or default value.
+Optional parameter `[[lang=lang]]` is set as the top route. If it's present in the URL, hooks will set a cookie for it as selected language and forward it as `locals.lang`. If `lang` param is not present, `locals.lang` will be set from either cookie, request header or default value.
 
 That way the app is always aware of what `locale` should be set and rendered.
 
