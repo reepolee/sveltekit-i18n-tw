@@ -30,5 +30,5 @@ export const handle = async ({ event, resolve }) => {
     }
     event.locals = { lang } // make it available to page.data
 
-    return resolve(event)
+    return resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', lang) })
 }
