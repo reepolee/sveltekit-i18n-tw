@@ -22,7 +22,7 @@
     />
 </svelte:head>
 
-{#if $_('general.loaded')}
+{#if $_('general.loaded') === 'loaded'}
     <Navigation />
 
     <slot />
