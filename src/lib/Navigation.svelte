@@ -3,7 +3,7 @@
     import { language_names, languages } from '$lib/i18n';
     import { page } from '$app/stores';
     import { PUBLIC_LANG_REPLACER } from '$env/static/public';
-
+    import Logo from '$lib/Logo.svelte';
     $: lang = $page.data.lang;
 </script>
 
@@ -13,7 +13,7 @@
         data-sveltekit-preload-data="off"
     >
         <div class="flex gap-x-8 items-center justify-start w-full">
-            <img src="/favicon.png" class="w-12 h-12" alt="Reepolee logo" />
+            <Logo />
             <a href="/{lang}" data-sveltekit-reload>{$_('general.home.caption')}</a>
             <a href="/{lang}/about">{$_('about.menu_label')}</a>
         </div>
