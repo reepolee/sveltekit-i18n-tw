@@ -8,8 +8,6 @@
 
     locale.set($page.data.lang);
     $: locale.set($page.data.lang);
-
-    console.log($page.url.search);
 </script>
 
 <svelte:head>
