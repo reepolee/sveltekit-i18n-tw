@@ -1,7 +1,7 @@
 <script>
     import '$src/app.postcss';
     import Navigation from '$lib/Navigation.svelte';
-    import { locale, isLoading, locales } from 'svelte-i18n';
+    import { locale, isLoading, _ } from 'svelte-i18n';
     import { page } from '$app/stores';
     import { languages } from '$src/lib/i18n';
     import { PUBLIC_DEFAULT_LOCALE, PUBLIC_LANG_REPLACER } from '$env/static/public';
@@ -22,7 +22,7 @@
     />
 </svelte:head>
 
-{#if !$isLoading}
+{#if $_('general.loaded')}
     <Navigation />
 
     <slot />
