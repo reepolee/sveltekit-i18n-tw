@@ -14,7 +14,7 @@
     >
         <div class="flex gap-x-8 items-center justify-start w-full">
             <Logo />
-            <a href="/{lang}" data-sveltekit-reload>{$_('general.home.caption')}</a>
+            <a href="/{lang}" data-sveltekit-reload>{$_('home.menu_label')}</a>
             <a href="/{lang}/about">{$_('about.menu_label')}</a>
         </div>
         <div class="flex items-center gap-x-8 justify-start sm:justify-end w-full">

@@ -4,6 +4,12 @@
     export let data;
 </script>
 
+<svelte:head>
+    <title>
+        {$_('home.title')}
+    </title>
+</svelte:head>
+
 {#if !$isLoading}
     <div class="p-2 md:p-8">
         <h1 class="font-bold text-3xl">{$_('general.welcome')}</h1>

@@ -22,21 +22,20 @@ That way the app is always aware of what `locale` should be set and rendered.
 
 ## Translations
 
-Translations reside in `/src/translations` folder. A subfolder is created for every supported language, for example `en`, `de` and `sl`. Subfolder contains JSON files with translations. Nesting is possible and you access a translated text by its key. For example in a file called `general.json` with the following content:
+Translations reside in `/src/translations` folder. A subfolder is created for every supported language, for example `en`, `de` and `sl`. Subfolder contains JSON files with translations. Nesting is possible and you access a translated text by its key. For example in a file called `home.json` with the following content:
 
 ```json
 {
-    "general": {
-        "welcome": "Dobrodošli!",
-        "home": {
-            "url": "/sl",
-            "caption": "Domov"
-        }
+    "home": {
+        "url": "/sl",
+        "caption": "Domov",
+        "menu_label": "Domov",
+        "title": "Reepolee Starter"
     }
 }
 ```
 
-you can display `Domov` by accessing the translated string with `{$_('general.home.caption')}`.
+you can display `Reepolee Starter` by accessing the translated string with `{$_('home.title')}`.
 
 Languages can be sorted by prefixing the code with a number or characters. For example, folder names could be `1-sl`,`2-en`,`3-de`. Hyphen is a simple separator to allow for alphabetical sort and anything before it is discarded.
 

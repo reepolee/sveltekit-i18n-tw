@@ -1,10 +1,6 @@
 {
     "general": {
         "loaded": "loaded",
-        "welcome": "Dobrodošli!",
-        "home": {
-            "url": "/sl",
-            "caption": "Domov"
-        }
+        "welcome": "Dobrodošli!"
     }
 }

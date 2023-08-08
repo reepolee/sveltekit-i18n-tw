@@ -1,10 +1,6 @@
 {
     "general": {
         "loaded": "loaded",
-        "welcome": "Willkommen!",
-        "home": {
-            "url": "/de",
-            "caption": "Startseite"
-        }
+        "welcome": "Willkommen!"
     }
 }
