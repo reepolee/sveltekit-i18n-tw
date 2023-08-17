@@ -4,10 +4,12 @@ import { PUBLIC_DEFAULT_LOCALE } from '$env/static/public';
 import './lib/i18n';
 import { languages } from './lib/i18n';
 
+const ONE_YEAR = 1000 * 60 * 60 * 24 * 365;
+
 export const handle = async ({ event, resolve }) => {
     if (event.params.lang) {
         // set a cookie for later
-        event.cookies.set('lang', event.params.lang, { path: "/" })
+        event.cookies.set('lang', event.params.lang, { path: "/", expires: new Date(Date.now() + ONE_YEAR) })
     }
 
     let lang = event.cookies.get('lang');
@@ -21,7 +23,7 @@ export const handle = async ({ event, resolve }) => {
         }
 
         // set for later
-        event.cookies.set('lang', lang, { path: "/" })
+        event.cookies.set('lang', lang, { path: "/", expires: new Date(Date.now() + ONE_YEAR) })
     }
 
     if (!event.params.lang && event.route.id) {
