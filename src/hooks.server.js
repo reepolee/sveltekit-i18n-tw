@@ -31,15 +31,19 @@ export const handle_language = async ({ event, resolve }) => {
         // route does not have a lang param, add one and redirect to it
         throw redirect(303, event.route.id.replace("[[lang=lang]]", lang) + event.url.search);
     }
-    event.locals = { lang } // make it available to page.data
 
-    return resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', lang) })
+    let theme = event.cookies.get('theme') || '';
+
+    event.locals = { lang, theme } // make it available to page.data
+
+    return resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', lang).replace('%theme%', theme) });
+
 }
+
 
 export const handle_my_hook = async ({ event, resolve }) => {
     // write your own if needed here
-    let theme = event.cookies.get('theme') || '';
-    return resolve(event, { transformPageChunk: ({ html }) => html.replace('%theme%', theme) })
+    return resolve(event);
 };
 
 

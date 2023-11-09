@@ -1,4 +1,5 @@
 <script>
+  import { page } from "$app/stores";
   import { _ } from "svelte-i18n";
 </script>
 
