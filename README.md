@@ -40,3 +40,6 @@ you can display `Reepolee Starter` by accessing the translated string with `{$_(
 Languages can be sorted by prefixing the code with a number or characters. For example, folder names could be `1-sl`,`2-en`,`3-de`. Hyphen is a simple separator to allow for alphabetical sort and anything before it is discarded.
 
 
+## Theming
+
+Tailwind classes `light` and `dark` are used on `<HTML>` tag to switch between themes. Class is set from cookie, defaults to `prefers-color-scheme`. Helper component `<ThemeSwitch>` is available within navigation.

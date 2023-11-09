@@ -4,17 +4,9 @@
   import { page } from "$app/stores";
   import { PUBLIC_LANG_REPLACER } from "$env/static/public";
   import Logo from "$lib/Logo.svelte";
-  import LightDark from "$svg/light-dark.svg?raw";
-  import cookies from "js-cookie";
+  import ThemeSwitch from "./ThemeSwitch.svelte";
 
   $: lang = $page.data.lang;
-
-  function flip_theme() {
-    let cookie_theme = cookies.get("theme") === "dark" ? "light" : "dark";
-    cookies.set("theme", cookie_theme);
-    document.documentElement.removeAttribute("class");
-    document.documentElement.className = cookie_theme;
-  }
 </script>
 
 <nav class="p-8">
@@ -36,8 +28,6 @@
       {/each}
     </div>
 
-    <button on:click={flip_theme} title="Switch theme">
-      {@html LightDark}
-    </button>
+    <ThemeSwitch />
   </div>
 </nav>
