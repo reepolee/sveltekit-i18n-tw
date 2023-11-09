@@ -5,8 +5,13 @@
   import { PUBLIC_LANG_REPLACER } from "$env/static/public";
   import Logo from "$lib/Logo.svelte";
   import ThemeSwitch from "./ThemeSwitch.svelte";
+  import cookies from "js-cookie";
 
   $: lang = $page.data.lang;
+
+  function set_lang_cookie(lang) {
+    cookies.set("lang", lang, { expires: 365, path: "/" });
+  }
 </script>
 
 <nav class="p-8">
@@ -22,6 +27,7 @@
     <div class="flex items-center gap-x-8 justify-start sm:justify-end w-full">
       {#each languages as _lang}
         <a
+          on:click={() => set_lang_cookie(_lang)}
           href={$page.route.id?.replace(PUBLIC_LANG_REPLACER, _lang) +
             $page.url.search}>{language_names.get(_lang)}</a
         >

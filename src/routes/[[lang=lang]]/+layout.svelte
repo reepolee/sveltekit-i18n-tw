@@ -9,7 +9,7 @@
     PUBLIC_LANG_REPLACER,
   } from "$env/static/public";
 
-  locale.set($page.data.lang);
+  // locale.set($page.data.lang);
   $: locale.set($page.data.lang);
 </script>
 

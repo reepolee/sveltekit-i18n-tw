@@ -8,12 +8,19 @@ import { languages } from './lib/i18n';
 const ONE_YEAR = 1000 * 60 * 60 * 24 * 365;
 
 export const handle_language = async ({ event, resolve }) => {
+    console.log('hook started');
+
     if (event.params.lang) {
         // set a cookie for later
-        event.cookies.set('lang', event.params.lang, { path: "/", expires: new Date(Date.now() + ONE_YEAR) })
+
+        console.log('cookie set from lang param:', event.params.lang);
+
+        event.cookies.set('lang', event.params.lang, { httpOnly: false, path: "/", expires: new Date(Date.now() + ONE_YEAR) })
     }
 
     let lang = event.cookies.get('lang');
+
+    console.log('read lang from cookie:', lang);
 
     if (!lang) {
         // there is no selected language, assign one from browser or app default

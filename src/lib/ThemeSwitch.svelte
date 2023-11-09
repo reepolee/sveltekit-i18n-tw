@@ -4,7 +4,7 @@
 
   function flip_theme() {
     let cookie_theme = cookies.get("theme") === "dark" ? "light" : "dark";
-    cookies.set("theme", cookie_theme);
+    cookies.set("theme", cookie_theme, { expires: 365, path: "/" });
     document.documentElement.removeAttribute("class");
     document.documentElement.className = cookie_theme;
   }
