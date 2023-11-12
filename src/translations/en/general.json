@@ -1,6 +1,4 @@
 {
-    "general": {
-        "loaded": "loaded",
-        "welcome": "Welcome!"
-    }
+    "loaded": "loaded",
+    "welcome": "Welcome!"
 }

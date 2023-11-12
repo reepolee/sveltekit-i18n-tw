@@ -3,10 +3,44 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+.paper {
+	@apply transition-colors duration-1000;
+}
+
 html {
-  @apply bg-white text-gray-900 transition-colors duration-1000;
+	@apply bg-gray-100 text-gray-900;
 }
 
 html.dark {
-  @apply bg-gray-900 text-gray-50;
+	@apply bg-gray-900 text-gray-50;
+}
+
+.paper {
+	@apply border border-gray-200 shadow-2xl  dark:border-gray-800;
+	@apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-50;
+}
+
+.button {
+	@apply w-min rounded border border-gray-500 px-4 py-2;
+	@apply text-gray-900;
+	@apply hover:bg-blue-900 hover:text-gray-50;
+	@apply focus:bg-blue-900  focus:text-gray-50 active:scale-95 active:shadow-lg;
+	@apply dark:text-white;
+}
+
+.error {
+	@apply font-bold text-reepolee-500 dark:text-red-400;
+}
+
+h1 {
+	@apply text-3xl font-bold;
+}
+
+h2 {
+	@apply text-2xl font-bold;
+}
+
+h3 {
+	@apply text-xl;
 }

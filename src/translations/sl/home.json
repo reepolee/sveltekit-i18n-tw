@@ -1,8 +1,6 @@
 {
-    "home": {
-        "url": "/sl",
-        "caption": "Domov",
-        "menu_label": "Domov",
-        "title": "Reepolee Starter"
-    }
+  "url": "/sl",
+  "caption": "Domov",
+  "menu_label": "Domov",
+  "title": "Reepolee Starter"
 }

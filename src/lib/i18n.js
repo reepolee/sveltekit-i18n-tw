@@ -1,4 +1,4 @@
-import { addMessages } from 'svelte-i18n'
+import { addMessages } from 'svelte-i18n';
 
 const languages_from_folder = new Set();
 const _language_names = new Map();
@@ -13,7 +13,14 @@ for (const module in imported_translations) {
 	languages_from_folder.add(lang);
 	imported_translations[module]().then((imported_module) => {
 		languages_from_folder.add(lang);
-		addMessages(lang, imported_module);
+		const segment = module.replaceAll('.json', '');
+		const remove_part = "../translations/" + lang + "/";
+		const _key = segment.replaceAll(remove_part, '').replaceAll('/', '.');
+
+		const messages = {};
+		messages[_key] = imported_module;
+
+		addMessages(lang, messages);
 	});
 }
 export const languages = [...languages_from_folder];

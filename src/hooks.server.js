@@ -1,7 +1,8 @@
 import { sequence } from "@sveltejs/kit/hooks";
 import { redirect } from '@sveltejs/kit';
-import { _ } from 'svelte-i18n';
+import { auth } from "$src/lib/server/lucia";
 import { PUBLIC_DEFAULT_LOCALE } from '$env/static/public';
+import { _ } from 'svelte-i18n';
 import './lib/i18n';
 import { languages } from './lib/i18n';
 
@@ -31,19 +32,38 @@ export const handle_language = async ({ event, resolve }) => {
         throw redirect(303, event.route.id.replace("[[lang=lang]]", lang) + event.url.search);
     }
 
-    let theme = event.cookies.get('theme') || '';
-
-    event.locals = { lang, theme } // make it available to page.data
-
-    return resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', lang).replace('%theme%', theme) });
+    event.locals.lang = lang;  // make it available to page.data
+    return await resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', lang) });
 
 }
 
-
-export const handle_my_hook = async ({ event, resolve }) => {
-    // write your own if needed here
-    return resolve(event);
+export const handle_theme = async ({ event, resolve }) => {
+    let theme = event.cookies.get('theme') || '';
+    event.locals.theme = theme; // make it available to page.data
+    return await resolve(event, { transformPageChunk: ({ html }) => html.replace('%theme%', theme) });
 };
 
 
-export const handle = sequence(handle_language, handle_my_hook)
+
+export const handle_auth = async ({ event, resolve }) => {
+    event.locals.auth = auth.handleRequest(event);
+    const session = await event.locals.auth.validate();
+
+    if (session) {
+        event.locals.user = {
+            userId: session.user.userId,
+            username: session.user.username
+        }
+    }
+
+    return await resolve(event);
+};
+
+
+export const handle_my_hook = async ({ event, resolve }) => {
+    // write your own if needed here and add it to the end of sequence below
+    return await resolve(event);
+};
+
+
+export const handle = sequence(handle_language, handle_theme, handle_auth)
