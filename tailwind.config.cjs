@@ -25,6 +25,14 @@ const config = {
         sans: ['Segoe UI', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont'],
       },
       colors: {
+        desktop: 'var(--color-desktop)',
+        paper: 'var(--color-paper)',
+        input: 'var(--color-input)',
+        ink: 'var(--color-ink)',
+        error: 'var(--color-error)',
+        primary: 'var(--color-primary)',
+        accent: 'var(--color-accent)',
+        border: 'var(--color-border)',
         reepolee: {
           50: '#FFE0E0',
           100: '#FFBDBD',

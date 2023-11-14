@@ -1,36 +1,30 @@
-/* Write your global styles here, in PostCSS syntax */
+@import './theme.postcss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
-.paper {
+.card {
 	@apply transition-colors duration-1000;
 }
 
 html {
-	@apply bg-gray-100 text-gray-900;
+	@apply bg-desktop text-ink;
 }
 
-html.dark {
-	@apply bg-gray-900 text-gray-50;
-}
-
-.paper {
-	@apply border border-gray-200 shadow-2xl  dark:border-gray-800;
-	@apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-50;
+.card {
+	@apply border border-border  shadow-2xl;
 }
 
 .button {
-	@apply w-min rounded border border-gray-500 px-4 py-2;
-	@apply text-gray-900;
-	@apply hover:bg-blue-900 hover:text-gray-50;
-	@apply focus:bg-blue-900  focus:text-gray-50 active:scale-95 active:shadow-lg;
-	@apply dark:text-white;
+	@apply w-min rounded border border-border px-4 py-2;
+	@apply bg-primary text-paper dark:text-ink;
+	@apply hover:bg-accent;
+	@apply focus:bg-accent active:scale-95 active:shadow-lg;
 }
 
 .error {
-	@apply font-bold text-reepolee-500 dark:text-red-400;
+	@apply font-bold text-error;
 }
 
 h1 {
@@ -43,4 +37,10 @@ h2 {
 
 h3 {
 	@apply text-xl;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+	@apply bg-input text-ink;
 }
