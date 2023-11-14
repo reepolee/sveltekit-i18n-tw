@@ -9,7 +9,7 @@
 <main class="container mx-auto grid place-items-center gap-8">
 	<h1>{$_('auth.profile.title')}</h1>
 
-	<div class="paper grid place-items-center gap-8 rounded-2xl p-8">
+	<div class=" grid place-items-center gap-8 rounded-2xl p-8">
 		<InputField>
 			<label for="username">{$_('auth.profile.label_id')}: </label>
 			<p class="w-50ch font-bold">{data.userId}</p>
@@ -21,7 +21,7 @@
 		</InputField>
 
 		<form method="post" action="?/logout" use:enhance>
-			<input type="submit" value={$_('auth.profile.logout_caption')} class="button underline" />
+			<input type="submit" value={$_('auth.profile.logout_caption')} class="btn btn-secondary" />
 		</form>
 	</div>
 </main>

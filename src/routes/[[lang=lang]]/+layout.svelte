@@ -26,4 +26,9 @@
 	<Navigation />
 
 	<slot />
+
+	<pre>
+
+		{JSON.stringify($page.data)}
+	</pre>
 {/if}
