@@ -3,44 +3,57 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-.card {
-	@apply transition-colors duration-1000;
+@layer components {
+	.card {
+		@apply border border-border  shadow-2xl;
+	}
+
+	.button {
+		@apply w-min rounded border border-border px-4 py-2;
+	}
+
+	.button.primary {
+		@apply bg-primary text-paper dark:text-ink;
+		@apply hover:bg-accent hover:shadow-xl;
+		@apply focus:bg-accent active:scale-95 active:shadow-xl;
+	}
+
+	.button.alert {
+		@apply bg-alert-500 text-paper dark:text-ink;
+		@apply hover:bg-alert-700 hover:shadow-xl;
+		@apply focus:bg-alert-700 active:scale-95 active:shadow-xl;
+	}
+
+	.error {
+		@apply font-bold text-error;
+	}
 }
 
-html {
-	@apply bg-desktop text-ink;
-}
+@layer utilities {
+	html,
+	.card {
+		@apply transition-colors duration-1000;
+	}
 
-.card {
-	@apply border border-border  shadow-2xl;
-}
+	html {
+		@apply min-h-screen bg-desktop text-ink;
+	}
 
-.button {
-	@apply w-min rounded border border-border px-4 py-2;
-	@apply bg-primary text-paper dark:text-ink;
-	@apply hover:bg-accent hover:shadow-xl;
-	@apply focus:bg-accent active:scale-95 active:shadow-xl;
-}
+	h1 {
+		@apply text-3xl font-bold;
+	}
 
-.error {
-	@apply font-bold text-error;
-}
+	h2 {
+		@apply text-2xl font-bold;
+	}
 
-h1 {
-	@apply text-3xl font-bold;
-}
+	h3 {
+		@apply text-xl;
+	}
 
-h2 {
-	@apply text-2xl font-bold;
-}
-
-h3 {
-	@apply text-xl;
-}
-
-input[type='text'],
-input[type='email'],
-input[type='password'] {
-	@apply bg-input text-ink;
+	input[type='text'],
+	input[type='email'],
+	input[type='password'] {
+		@apply bg-input text-ink;
+	}
 }

@@ -9,7 +9,7 @@
 <main class="container mx-auto grid place-items-center gap-8">
 	<h1>{$_('auth.profile.title')}</h1>
 
-	<div class="bg-paper grid place-items-center gap-8 rounded-2xl p-8">
+	<div class="card grid place-items-center gap-8 rounded-2xl bg-paper p-8">
 		<InputField>
 			<div>{$_('auth.profile.label_id')}:</div>
 			<p class="w-50ch font-bold">{data.userId}</p>

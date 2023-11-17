@@ -44,3 +44,12 @@ Tailwind classes `light` and `dark` are used on `<HTML>` tag to switch between t
 
 - translate `/auth`
 - make <LanguageSwitcher>
+- add classes to @layers utilites for autocomplete
+- autofill styling
+- larger focus ring
+- data attributes?
+- plugins?
+- container query plugin
+- buttons plugin
+- https://tailwindcss.com/docs/presets
+- human breakpoints (width x height x dpi x touch) phone, tablet, notebook, desktop, tv

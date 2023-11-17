@@ -5,6 +5,7 @@
 
 	let cookie_theme = cookies.get('theme');
 	let theme_set = cookie_theme || false;
+
 	onMount(() => {
 		if (!cookie_theme) {
 			cookie_theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -18,4 +19,6 @@
 
 <div class:hidden={!theme_set || !$page.data.lang}>
 	<slot />
+
+	<button class="bg-red-100">test</button>
 </div>

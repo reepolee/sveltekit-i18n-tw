@@ -33,6 +33,8 @@ const config = {
         primary: 'var(--color-primary)',
         accent: 'var(--color-accent)',
         border: 'var(--color-border)',
+        'alert-500': 'var(--color-alert)',
+        'alert-700': 'color-mix(in srgb,var(--color-alert),#000 15%)',
         reepolee: {
           50: '#FFE0E0',
           100: '#FFBDBD',
