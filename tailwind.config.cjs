@@ -1,4 +1,5 @@
 const forms = require('@tailwindcss/forms');
+
 const config = {
   darkMode: 'class',
   content: ["./src/**/*.{html,js,svelte,ts}"],
@@ -31,10 +32,13 @@ const config = {
         ink: 'var(--color-ink)',
         error: 'var(--color-error)',
         primary: 'var(--color-primary)',
+        'primary-darker': 'color-mix(in srgb,var(--color-primary),#000 20%)',
+        'primary-lighter': 'color-mix(in srgb,var(--color-primary),#FFF 20%)',
         accent: 'var(--color-accent)',
         border: 'var(--color-border)',
-        'alert-500': 'var(--color-alert)',
-        'alert-700': 'color-mix(in srgb,var(--color-alert),#000 15%)',
+        'alert': 'var(--color-alert)',
+        'alert-darker': 'color-mix(in srgb,var(--color-alert),#000 20%)',
+        'alert-lighter': 'color-mix(in srgb,var(--color-alert),#FFF 20%)',
         reepolee: {
           50: '#FFE0E0',
           100: '#FFBDBD',

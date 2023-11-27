@@ -3,39 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-	.card {
-		@apply border border-border  shadow-2xl;
-	}
-
-	.button {
-		@apply w-min rounded border border-border px-4 py-2;
-	}
-
-	.button.primary {
-		@apply bg-primary text-paper dark:text-ink;
-		@apply hover:bg-accent hover:shadow-xl;
-		@apply focus:bg-accent active:scale-95 active:shadow-xl;
-	}
-
-	.button.alert {
-		@apply bg-alert-500 text-paper dark:text-ink;
-		@apply hover:bg-alert-700 hover:shadow-xl;
-		@apply focus:bg-alert-700 active:scale-95 active:shadow-xl;
-	}
-
-	.error {
-		@apply font-bold text-error;
-	}
-}
-
-@layer utilities {
-	html,
-	.card {
+	html	{
 		@apply transition-colors duration-1000;
-	}
-
-	html {
 		@apply min-h-screen bg-desktop text-ink;
 	}
 
@@ -56,4 +25,27 @@
 	input[type='password'] {
 		@apply bg-input text-ink;
 	}
-}
+
+	.card {
+		@apply border border-border shadow-2xl;
+	}
+
+	.button {
+		@apply w-min rounded border border-border px-4 py-2;
+	}
+
+	.button.primary {
+		@apply bg-primary text-paper dark:text-ink;
+		@apply hover:bg-primary-darker hover:shadow-xl;
+		@apply focus:bg-primary-darker active:scale-95 active:shadow-xl;
+	}
+
+	.button.alert {
+		@apply bg-alert text-paper dark:text-ink;
+		@apply hover:bg-alert-darker hover:shadow-xl;
+		@apply focus:bg-alert-darker active:scale-95 active:shadow-xl;
+	}
+
+	.error {
+		@apply font-bold text-error;
+	}

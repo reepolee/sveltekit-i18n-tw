@@ -1,6 +1,6 @@
 <script>
 	import { enhance } from '$app/forms';
-	import InputField from '$src/lib/InputField.svelte';
+	import Field from '$lib/Field.svelte';
 	import { _ } from 'svelte-i18n';
 	export let form;
 </script>
@@ -9,15 +9,15 @@
 	<h1>{$_('auth.login.title')}</h1>
 
 	<form method="post" use:enhance class="card grid place-items-center gap-8 rounded-2xl bg-paper p-8">
-		<InputField>
+		<Field>
 			<label for="username">{$_('auth.login.label_email')}:</label>
 			<input type="email" name="username" id="username" class="w-50ch rounded" />
-		</InputField>
+		</Field>
 
-		<InputField>
+		<Field>
 			<label for="password">{$_('auth.login.label_password')}:</label>
 			<input type="password" name="password" id="password" class="w-50ch rounded" />
-		</InputField>
+		</Field>
 		{#if form?.message}
 			<p class="error">{$_(form.message)}</p>
 		{/if}

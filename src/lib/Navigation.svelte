@@ -15,10 +15,7 @@
 </script>
 
 <nav class="p-8">
-	<div
-		class="container mx-auto flex flex-col items-center gap-4 sm:flex-row md:justify-between"
-		data-sveltekit-preload-data="off"
-	>
+	<div class="container mx-auto flex flex-col items-center gap-4 sm:flex-row md:justify-between" data-sveltekit-preload-data="off">
 		<div class="flex w-full items-center justify-start gap-x-8">
 			<Logo />
 			<a href="/{lang}" data-sveltekit-reload>{$_('home.menu_label')}</a>
@@ -26,17 +23,15 @@
 		</div>
 		<div class="flex w-full items-center justify-start gap-x-8 sm:justify-end">
 			{#each languages as _lang}
-				<a
-					on:click={() => set_lang_cookie(_lang)}
-					href={$page.route.id?.replace(PUBLIC_LANG_REPLACER, _lang) + $page.url.search}>{language_names.get(_lang)}</a
+				<a on:click={() => set_lang_cookie(_lang)} href={$page.route.id?.replace(PUBLIC_LANG_REPLACER, _lang) + $page.url.search}>{language_names.get(_lang)}</a
 				>
 			{/each}
 		</div>
 
 		{#if $page.data.user?.username}
-			<a href="/auth/profile" class="text-reepolee-500 font-bold">{$page.data.user.username}</a>
+			<a href="/auth/profile" class="font-bold text-reepolee-500">{$page.data.user.username}</a>
 		{:else}
-			<a href="/auth/login">Login</a>
+			<a href="/auth/login" class="min-w-max">{$_('auth.login.title')}</a>
 		{/if}
 		<ThemeSwitch />
 	</div>
