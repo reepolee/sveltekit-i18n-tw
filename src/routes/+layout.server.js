@@ -1,5 +1,7 @@
 export const load = async (event) => {
     return {
-        ...event.locals
+        theme: event.locals.theme,
+        lang: event.locals.lang,
+        user: event.locals?.user || {}
     }
 }

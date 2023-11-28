@@ -1,6 +1,4 @@
 {
-  "about": {
-    "title": "Über diese Anwendung",
-    "menu_label": "Über"
-  }
+  "title": "Über diese Anwendung",
+  "menu_label": "Über"
 }

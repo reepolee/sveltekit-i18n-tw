@@ -1,6 +1,4 @@
 {
-  "about": {
-    "title": "About this App",
-    "menu_label": "About"
-  }
+  "title": "About this App",
+  "menu_label": "About"
 }

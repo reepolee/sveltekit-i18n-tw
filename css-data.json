@@ -1,0 +1,17 @@
+{
+	"version": 1.1,
+	"atDirectives": [
+		{
+			"name": "@tailwind",
+			"description": "Tailwind layer directives"
+		},
+		{
+			"name": "@apply",
+			"description": "Tailwind @apply classes"
+		},
+		{
+			"name": "@screen",
+			"description": "Tailwind screen selectors"
+		}
+	]
+}

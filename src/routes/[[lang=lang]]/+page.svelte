@@ -1,18 +1,18 @@
 <script>
-    import { language_names } from '$src/lib/i18n';
-    import { _, isLoading } from 'svelte-i18n';
-    export let data;
+	import { language_names } from '$src/lib/i18n';
+	import { _, isLoading } from 'svelte-i18n';
+	export let data;
 </script>
 
 <svelte:head>
-    <title>
-        {$_('home.title')}
-    </title>
+	<title>
+		{$_('home.title')}
+	</title>
 </svelte:head>
 
 {#if !$isLoading}
-    <div class="p-2 md:p-8">
-        <h1 class="font-bold text-3xl">{$_('general.welcome')}</h1>
-        <p>{language_names.get(data.lang)}</p>
-    </div>
+	<div class="container mx-auto">
+		<h1 class="text-3xl font-bold">{$_('general.welcome')}</h1>
+		<p>{language_names.get(data.lang)}</p>
+	</div>
 {/if}

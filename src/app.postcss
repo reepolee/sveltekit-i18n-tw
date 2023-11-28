@@ -1,12 +1,51 @@
-/* Write your global styles here, in PostCSS syntax */
+@import './theme.postcss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply bg-white text-gray-900 transition-colors duration-1000;
-}
+	html	{
+		@apply transition-colors duration-1000;
+		@apply min-h-screen bg-desktop text-ink;
+	}
 
-html.dark {
-  @apply bg-gray-900 text-gray-50;
-}
+	h1 {
+		@apply text-3xl font-bold;
+	}
+
+	h2 {
+		@apply text-2xl font-bold;
+	}
+
+	h3 {
+		@apply text-xl;
+	}
+
+	input[type='text'],
+	input[type='email'],
+	input[type='password'] {
+		@apply bg-input text-ink;
+	}
+
+	.card {
+		@apply border border-border shadow-2xl;
+	}
+
+	.button {
+		@apply w-min rounded border border-border px-4 py-2;
+	}
+
+	.button.primary {
+		@apply bg-primary text-paper dark:text-ink;
+		@apply hover:bg-primary-darker hover:shadow-xl;
+		@apply focus:bg-primary-darker active:scale-95 active:shadow-xl;
+	}
+
+	.button.alert {
+		@apply bg-alert text-paper dark:text-ink;
+		@apply hover:bg-alert-darker hover:shadow-xl;
+		@apply focus:bg-alert-darker active:scale-95 active:shadow-xl;
+	}
+
+	.error {
+		@apply font-bold text-error;
+	}
