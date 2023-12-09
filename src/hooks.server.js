@@ -27,7 +27,7 @@ export const handle_language = async ({ event, resolve }) => {
         event.cookies.set('lang', lang, { path: "/", expires: new Date(Date.now() + ONE_YEAR) })
     }
 
-    if (!event.params.lang && event.route.id) {
+    if (!event.params.lang && event.url) {
         // route does not have a lang param, add one and redirect to it
         const { origin, pathname, search } = event.url;
         const redirect_to = `${origin}/${lang}${pathname}${search}`;
