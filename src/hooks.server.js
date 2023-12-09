@@ -1,7 +1,7 @@
-import { sequence } from "@sveltejs/kit/hooks";
-import { redirect } from '@sveltejs/kit';
-import { auth } from "$src/lib/server/lucia";
 import { PUBLIC_DEFAULT_LOCALE } from '$env/static/public';
+import { auth } from "$src/lib/server/lucia";
+import { redirect } from '@sveltejs/kit';
+import { sequence } from "@sveltejs/kit/hooks";
 import { _ } from 'svelte-i18n';
 import './lib/i18n';
 import { languages } from './lib/i18n';
@@ -29,7 +29,9 @@ export const handle_language = async ({ event, resolve }) => {
 
     if (!event.params.lang && event.route.id) {
         // route does not have a lang param, add one and redirect to it
-        throw redirect(303, event.route.id.replace("[[lang=lang]]", lang) + event.url.search);
+        const { origin, pathname, search } = event.url;
+        const redirect_to = `${origin}/${lang}${pathname}${search}`;
+        throw redirect(303, redirect_to);
     }
 
     event.locals.lang = lang;  // make it available to page.data
