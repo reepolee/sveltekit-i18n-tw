@@ -10,7 +10,6 @@ const ONE_YEAR = 1000 * 60 * 60 * 24 * 365;
 
 export const handle_language = async ({ event, resolve }) => {
     if (event.params.lang) {
-        // set a cookie for later
         event.cookies.set('lang', event.params.lang, { httpOnly: false, path: "/", expires: new Date(Date.now() + ONE_YEAR) })
     }
 
@@ -36,7 +35,6 @@ export const handle_language = async ({ event, resolve }) => {
 
     event.locals.lang = lang;  // make it available to page.data
     return await resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', lang) });
-
 }
 
 export const handle_theme = async ({ event, resolve }) => {
@@ -44,8 +42,6 @@ export const handle_theme = async ({ event, resolve }) => {
     event.locals.theme = theme; // make it available to page.data
     return await resolve(event, { transformPageChunk: ({ html }) => html.replace('%theme%', theme) });
 };
-
-
 
 export const handle_auth = async ({ event, resolve }) => {
     event.locals.auth = auth.handleRequest(event);
@@ -61,11 +57,9 @@ export const handle_auth = async ({ event, resolve }) => {
     return await resolve(event);
 };
 
-
 export const handle_my_hook = async ({ event, resolve }) => {
     // write your own if needed here and add it to the end of sequence below
     return await resolve(event);
 };
-
 
 export const handle = sequence(handle_language, handle_theme, handle_auth)
